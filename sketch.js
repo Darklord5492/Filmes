@@ -1,7 +1,7 @@
 let campoIdade, campoFantasia, campoAventura;
 
 function setup() {
-  createCanvas(800, 400);
+  createCanvas(800, 600);
   background(240);
 
   // Título
