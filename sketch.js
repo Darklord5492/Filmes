@@ -5,7 +5,10 @@ function setup() {
   let canvas = createCanvas(1000, 600);
   canvas.style("border", "15px double #3498db"); // Borda dupla
   canvas.style("border-radius", "25px");
-  canvas.style("box-shadow", "0 10px 35px rgba(52, 152, 219, 0.4), inset 0 0 15px rgba(52, 152, 219, 0.2)"); // Sombra externa e interna
+  canvas.style(
+    "box-shadow",
+    "0 10px 35px rgba(52, 152, 219, 0.4), inset 0 0 15px rgba(52, 152, 219, 0.2)"
+  ); // Sombra externa e interna
   canvas.style("background", "linear-gradient(145deg, #f8f9fa, #e9ecef)"); // Gradiente sutil
   canvas.style("padding", "10px");
   background(240);
@@ -22,16 +25,20 @@ function setup() {
 
   // Controles no canto inferior esquerdo
   let controlsY = height - 180;
-  
+
   // Container para os controles (opcional - para melhor organização)
-  let controlsContainer = createDiv().position(40, controlsY).style('background', 'rgba(255,255,255,0.7)')
-    .style('padding', '20px').style('border-radius', '15px').style('border', '2px solid #3498db');
-  
+  let controlsContainer = createDiv()
+    .position(40, controlsY)
+    .style("background", "rgba(255,255,255,0.7)");
+
   // Age control
-  createP("Sua idade:").position(50, controlsY + 20).style("font-size", "16px").style('margin-top', '0');
+  createP("Sua idade:")
+    .position(50, controlsY + 20)
+    .style("font-size", "16px")
+    .style("margin-top", "0");
   campoIdade = createInput("10", "number")
     .position(125, controlsY + 15)
-    .size(60)
+    .size(40)
     .attribute("min", "5")
     .attribute("max", "100")
     .style("padding", "5px");
@@ -52,24 +59,24 @@ function setup() {
     .position(50, controlsY + 140)
     .style("color", "#7f8c8d")
     .style("font-size", "12px")
-    .style('margin-top', '0');
+    .style("margin-top", "0");
 }
 
 function draw() {
   // Fundo com textura sutil
   background(240);
-  
+
   // Borda interna de luxo
   noFill();
   strokeWeight(6);
   stroke(52, 152, 219, 120);
   rect(20, 20, width - 40, height - 40, 20);
-  
+
   // Segunda borda interna decorativa
   strokeWeight(2);
   stroke(255, 255, 255, 80);
   rect(25, 25, width - 50, height - 50, 18);
-  
+
   // Elementos decorativos premium
   noStroke();
   for (let i = 0; i < 10; i++) {
@@ -126,19 +133,22 @@ function gerarRecomendacao(idade, tipo) {
       case "fantasiaAventura":
         return {
           titulo: "A Jornada de Chihiro",
-          descricao: "Animação fantástica sobre uma garota em um mundo de espíritos, cheia de aventuras mágicas.",
+          descricao:
+            "Animação fantástica sobre uma garota em um mundo de espíritos, cheia de aventuras mágicas.",
           tipo: "Fantasia-Aventura",
         };
       case "fantasia":
         return {
           titulo: "Meu Amigo Totoro",
-          descricao: "Doce história sobre duas irmãs que descobram criaturas mágicas na floresta.",
+          descricao:
+            "Doce história sobre duas irmãs que descobram criaturas mágicas na floresta.",
           tipo: "Fantasia",
         };
       case "aventura":
         return {
           titulo: "Operação Big Hero",
-          descricao: "Aventura tecnológica com um robô inflável e um jovem inventor.",
+          descricao:
+            "Aventura tecnológica com um robô inflável e um jovem inventor.",
           tipo: "Aventura",
         };
       default:
@@ -155,7 +165,8 @@ function gerarRecomendacao(idade, tipo) {
       case "fantasiaAventura":
         return {
           titulo: "Harry Potter e o Prisioneiro de Azkaban",
-          descricao: "Aventura mágica com Harry Potter e seus amigos em Hogwarts.",
+          descricao:
+            "Aventura mágica com Harry Potter e seus amigos em Hogwarts.",
           tipo: "Fantasia-Aventura",
         };
       case "fantasia":
@@ -173,7 +184,8 @@ function gerarRecomendacao(idade, tipo) {
       default:
         return {
           titulo: "O Pequeno Príncipe",
-          descricao: "Adaptação da clássica história sobre amizade e descobertas.",
+          descricao:
+            "Adaptação da clássica história sobre amizade e descobertas.",
           tipo: "Geral",
         };
     }
@@ -184,13 +196,15 @@ function gerarRecomendacao(idade, tipo) {
       case "fantasiaAventura":
         return {
           titulo: "O Senhor dos Anéis: A Sociedade do Anel",
-          descricao: "Epopeia fantástica sobre a jornada para destruir um anel maligno.",
+          descricao:
+            "Epopeia fantástica sobre a jornada para destruir um anel maligno.",
           tipo: "Fantasia-Aventura",
         };
       case "fantasia":
         return {
           titulo: "A Forma da Água",
-          descricao: "Conto de fadas para adultos sobre amor e criaturas mágicas.",
+          descricao:
+            "Conto de fadas para adultos sobre amor e criaturas mágicas.",
           tipo: "Fantasia",
         };
       case "aventura":
